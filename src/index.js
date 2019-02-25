@@ -53,28 +53,21 @@ function showPuppy(puppy) {
 }
 
 function toggleGoodDogBtn(e) {
-    // console.log(e)
     const id = e.target.id
 
-    if (e.target.textContent === "Bad Dog!") {
-        const options = {
+    function options(boolean) {
+        return {
             method: "PATCH",
             headers: {"Content-Type": "application/json"},
-            body: JSON.stringify({
-                isGoodDog: true
-            })
+            body: JSON.stringify( {isGoodDog: boolean} )
         }
-        fetch(`http://localhost:3000/pups/${id}`, options)
+    }  
+
+    if (e.target.textContent === "Bad Dog!") {
+        fetch(`http://localhost:3000/pups/${id}`, options(true))
         e.target.textContent = "Good Dog!"
     } else {
-        const options = {
-            method: "PATCH",
-            headers: {"Content-Type": "application/json"},
-            body: JSON.stringify({
-                isGoodDog: false
-            })
-        }
-        fetch(`http://localhost:3000/pups/${id}`, options)
+        fetch(`http://localhost:3000/pups/${id}`, options(false))
         e.target.textContent = "Bad Dog!"
     }
 }

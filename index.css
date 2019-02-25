@@ -3,7 +3,28 @@
   justify-content: center;
   align-items: center;
   background: skyblue;
+}
 
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+}
+
+#create-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+}
+
+#create-new-dog-button{
+  margin: 1vh;
+  width: 35vw;
+  font-size: 1em;
+  height: 5vh;
+  border-radius: 3em;
 }
 
 #good-dog-filter {

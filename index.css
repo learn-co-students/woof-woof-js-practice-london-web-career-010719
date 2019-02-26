@@ -51,3 +51,11 @@
 body {
   margin: 0;
 }
+
+.show-btn{
+  visibility: visible
+}
+
+.hide-btn{
+  visibility: hidden
+}

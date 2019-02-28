@@ -1,10 +1,10 @@
 class Puppy {
-    constructor(id, name, isGoodDog, image, like) {
-        this.id = id
-        this.name = name
-        this.isGoodDog = isGoodDog
-        this.image = image
-        this.like = like
+    constructor(pup) {
+        this.id = pup.id
+        this.name = pup.name
+        this.isGoodDog = pup.isGoodDog
+        this.image = pup.image
+        this.like = pup.like
         this.createInfo()
     }
     
@@ -41,18 +41,10 @@ class Puppy {
     }
 
     likeDog(e) {
-        const id = this.id
-        let like = this.like + 1
-        const options =
-        {
-            method: "PATCH",
-            headers: {"Content-Type": "application/json"},
-            body: JSON.stringify( {like: like} )
-        }
-        
-        return fetch(`http://localhost:3000/pups/${id}`, options)
-        .then(res => res.json())
-        .then((puppy) => document.querySelector("h4").innerText = `Like: ${puppy.like}`)
+        this.like++
+       
+        Api.updatePupLikes(this.id, this.like)
+            .then((puppy) => document.querySelector("h4").innerText = `Like: ${puppy.like}`)
     }
 
     toggleGoodDogBtn(e) {

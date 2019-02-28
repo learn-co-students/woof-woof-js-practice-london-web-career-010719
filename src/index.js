@@ -2,7 +2,7 @@ const PUPS_URL = "http://localhost:3000/pups"
 const dogBar = document.querySelector("#dog-bar")
 const filterBtn = document.querySelector("#good-dog-filter")
 const dogContainer = document.querySelector("#dog-summary-container")
-
+let pupList
 
 // create dog btn
 const createDogBtn = document.createElement("button")
@@ -74,24 +74,24 @@ function edit(e) {
 }
 
 // get dogs info from server
-function getPups() {
-    return fetch(PUPS_URL)
-    .then(res => res.json())
-}
+// function getPups() {
+//     return fetch(PUPS_URL)
+//     .then(res => res.json())
+// }
 
-function addPupsToBar (pups) {
-    dogBar.innerHTML = ""
-     pups.forEach(puppy => {
-        const span = document.createElement("span")
-        span.innerText = puppy.name
-        span.id = `span-${puppy.id}`
-        document.querySelector("#dog-bar").appendChild(span)
-    })
-}
+// function addPupsToBar (pups) {
+//     dogBar.innerHTML = ""
+//      pups.forEach(puppy => {
+//         const span = document.createElement("span")
+//         span.innerText = puppy.name
+//         span.id = `span-${puppy.id}`
+//         document.querySelector("#dog-bar").appendChild(span)
+//     })
+// }
 
 function initPupsBar() {
     getPups()
-    .then(res => addPupsToBar(res))
+    .then(pups => pupList)
 }
 
 function createPupsInstance(e) {
@@ -101,7 +101,7 @@ function createPupsInstance(e) {
     })
     .then(puppy => {
         puppy.like ? puppy.like : puppy.like = 0
-        new Puppy(puppy.id, puppy.name, puppy.isGoodDog, puppy.image, puppy.like)
+        new Puppy(puppy)
     })
 }
 
@@ -124,5 +124,8 @@ function init() {
     dogBar.addEventListener("click", createPupsInstance)
     filterBtn.addEventListener("click", toggleFilter)
 }
+
+getPups()
+    .then(pups => pupList = new PupList(pups))
 
 init()

@@ -3,16 +3,14 @@
     {
       "id": 1,
       "name": "Mr. Bonkers",
-      "isGoodDog": false,
-      "image": "https://weloveanimals.me/wp-content/uploads/2017/10/gettyimages-590486672-e1508512743796.jpg",
-      "like": 12
+      "isGoodDog": true,
+      "image": "https://weloveanimals.me/wp-content/uploads/2017/10/gettyimages-590486672-e1508512743796.jpg"
     },
     {
       "id": 2,
       "name": "Nugget",
-      "isGoodDog": true,
-      "image": "https://www.guidedogs.org/wp-content/uploads/2018/01/Mobile.jpg",
-      "like": null
+      "isGoodDog": false,
+      "image": "https://www.guidedogs.org/wp-content/uploads/2018/01/Mobile.jpg"
     },
     {
       "id": 3,
@@ -24,7 +22,7 @@
     {
       "id": 4,
       "name": "Buttercup",
-      "isGoodDog": false,
+      "isGoodDog": true,
       "image": "https://www.petinsurance.com/images/VSSimages/consumer/v5/banner_dog_insurance.jpg",
       "like": 1
     },
@@ -37,7 +35,7 @@
     {
       "id": 6,
       "name": "Snooper Pooper",
-      "isGoodDog": false,
+      "isGoodDog": true,
       "image": "https://static01.nyt.com/images/2018/02/11/realestate/11dogs-topbreeds-Chihuahua/11dogs-topbreeds-Chihuahua-master495.jpg"
     },
     {

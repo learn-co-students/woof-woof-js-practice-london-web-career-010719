@@ -14,6 +14,14 @@
   border-radius: 3em;
 }
 
+#toggle-dog-form {
+  margin-top: 1vh;
+  width: 35vw;
+  font-size: 1em;
+  height: 5vh;
+  border-radius: 3em;
+}
+
 #dog-bar {
   height: 15vh;
   background: skyblue;
@@ -28,6 +36,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center; /* new! */
   border-radius: 2em;
   border: 1px solid blue;
 }
